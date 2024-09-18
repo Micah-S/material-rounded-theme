@@ -1,0 +1,19 @@
+.bubble-button-card-container {
+    background-color: var(--ha-card-background, var(--card-background-color, #fff));
+    box-shadow: var(--ha-card-box-shadow, none);
+    border-radius: var(--ha-card-border-radius, 12px);
+
+    .bubble-icon-container {
+        background-color: var(--ha-card-background, var(--card-background-color, #fff));
+    }
+}
+
+.bubble-pop-up-container {
+    .bubble-button-card-container {
+        background-color: #fff;
+    
+        .bubble-icon-container {
+            background-color: #fff
+        }
+    }
+}

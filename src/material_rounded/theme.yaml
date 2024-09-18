@@ -1,8 +1,8 @@
-Material Rounded:
+Custom Material Rounded:
   modes:
     dark:
       dark-mode: 1
-      accent-luminance: 23%
+      accent-luminance: 35%
       primary-luminance: 88%
       accent-color: rgb(0, 74, 119)
       primary-color: rgb(194, 231, 254)
@@ -27,7 +27,7 @@ Material Rounded:
 
     light:
       dark-mode: 0
-      accent-luminance: 88%
+      accent-luminance: 70%
       primary-luminance: 10%
       accent-color: rgb(194, 231, 255)
       primary-color: rgb(0, 29, 53)

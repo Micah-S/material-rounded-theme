@@ -41,33 +41,33 @@ def main():
 				common_context[element]['yaml'] = recursiveRender(common_context[element]['yaml'], common_context)
 
 		with open('./src/material_rounded/theme.yaml', 'r') as src:
-			# Create Material Rounded theme
-			theme_title = 'Material Rounded'
+			# Create Custom Material Rounded theme
+			theme_title = 'Custom Material Rounded'
 			base_theme = yaml.load(src)[theme_title]
 			output[theme_title] = deepcopy(base_theme)
 
 			# Create a transparent card background version of theme
-			theme_title = 'Material Rounded Transparent Card'
+			theme_title = 'Custom Material Rounded Transparent Card'
 			transparent = 'rgb(0, 0, 0, 0)'
 			output[theme_title] = deepcopy(base_theme)
 			output[theme_title]['ha-card-background'] = transparent
 
 			# Create a no mod versions of theme with fixed status and navbar colors
-			theme_title = 'Material Rounded No Mod'
-			output[theme_title] = deepcopy(output['Material Rounded'])
+			theme_title = 'Custom Material Rounded No Mod'
+			output[theme_title] = deepcopy(output['Custom Material Rounded'])
 			output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
 			output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
 			
-			theme_title = 'Material Rounded Transparent Card No Mod'
-			output[theme_title] = deepcopy(output['Material Rounded Transparent Card'])
+			theme_title = 'Custom Material Rounded Transparent Card No Mod'
+			output[theme_title] = deepcopy(output['Custom Material Rounded Transparent Card'])
 			output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
 			output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
 
 			# Add card mod fields to main versions of theme
-			output['Material Rounded']['card-mod-theme'] = 'Material Rounded'
-			output['Material Rounded Transparent Card']['card-mod-theme'] = 'Material Rounded'
+			output['Custom Material Rounded']['card-mod-theme'] = 'Custom Material Rounded'
+			output['Custom Material Rounded Transparent Card']['card-mod-theme'] = 'Custom Material Rounded'
 
-			# Load Material Rounded user colors code
+			# Load Custom Material Rounded user colors code
 			with open('./src/material_rounded/user_colors.jinja') as f:
 				theme_context = {
 					**common_context,
@@ -86,7 +86,7 @@ def main():
 					# Save template to buffer and then read to get yaml as string
 					buffer = StringIO()
 					yaml.dump(element_yaml, buffer)
-					output['Material Rounded'][f'card-mod-{element.replace('_', '-')}-yaml'] = buffer.getvalue().strip()
+					output['Custom Material Rounded'][f'card-mod-{element.replace('_', '-')}-yaml'] = buffer.getvalue().strip()
 
 		yaml.dump(output, dist)
 

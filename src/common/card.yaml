@@ -2,6 +2,7 @@
   {{ hex2hsl.jinja }}
   {{ user_colors.jinja }}
   {{ card.css }}
+  {{ bubble_button.css }}
 
 # Entities header toggle
 hui-entities-toggle$ ha-switch$: >-
